@@ -7,9 +7,7 @@ const container = document.getElementById("app");
 const root = ReactDOM.createRoot(container);
 
 root.render(
-    <div>Hello</div>
-
-);
-{/* <BrowserRouter>
+  <BrowserRouter>
     <Main />
-  </BrowserRouter> */}
+  </BrowserRouter>
+);

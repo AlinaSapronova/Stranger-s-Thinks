@@ -1,34 +1,23 @@
 {
-  "name": "stranger-s-thinks",
+  "name": "testing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "NODE_ENV='development' react-scripts start",
     "start": "react-scripts start",
     "build": "NODE_ENV=production npm run compile-env && react-scripts build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlinaSapronova/Stranger-s-Thinks.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
-  },
-  "devDependencies": {
+    "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1"
   },
-  "bugs": {
-    "url": "https://github.com/AlinaSapronova/Stranger-s-Thinks/issues"
-  },
-  "homepage": "https://github.com/AlinaSapronova/Stranger-s-Thinks#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",

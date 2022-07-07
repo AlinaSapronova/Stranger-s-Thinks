@@ -1,2 +1,2 @@
-export {default as Main} from './Main';
-export {default as AllPost} from './AllPost';
+export {default as AllPosts} from './AllPosts'
+export {default as Main} from './Main'
