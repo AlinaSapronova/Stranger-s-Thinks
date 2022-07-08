@@ -1,4 +1,5 @@
-export {default as AllPosts} from './AllPosts'
+export {default as Posts} from './Posts'
 export {default as Main} from './Main'
 export {default as NavBar} from './NavBar'
 export {default as Profile} from './Profile'
+export {default as Login} from './Login'

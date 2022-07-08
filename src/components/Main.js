@@ -1,16 +1,20 @@
-import React, {useState} from "react";
-import { AllPosts } from "./";
-import {NavBar} from "./"
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Posts,Profile,NavBar,Login } from "./";
 
 
 const Main = () => {
-  const [posts, setPosts] = useState({});
   return (
-    <div>
+    <>
       <NavBar />
-      <AllPosts posts={posts} setPosts={setPosts}/>
-      
-    </div>
+      <Routes>
+        <Route path ="/"  element ={<div>Landing page</div>}></Route>
+        <Route path = "/Profile" element = {<Profile/>}></Route>
+        <Route path = "/Posts"  element = {<Posts/>}></Route>
+        <Route path = "/Login" element = {<Login />}></Route>
+      </Routes>
+      </>
+   
   );
 };
 
