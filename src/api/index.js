@@ -40,12 +40,9 @@ export const loginUser = async (username, password) => {
         },
       }),
     });
-    // console.log(response, "response from loginUser");
-    // const result = await response.json();
-    // const token = result.data.token;
-    // localStorage.setItem("token", token);
-    // const storageToken = localStorage.getItem("token");
-    // return storageToken;
+    const result = await response.json()
+    return result
+    
   } catch (error) {
     console.error(error);
   }
@@ -57,6 +54,7 @@ export const registerUser = async (username,password,setToken) => {
     method:"POST",
     headers: {
       "Content-Type" : "application/json"
+      
     },
     body: JSON.stringify({
       user: {
@@ -66,4 +64,8 @@ export const registerUser = async (username,password,setToken) => {
       
     })
   })
+  const result = await response.json()
+  console.log(result,"im from api index!!!")
+  return result
+  
 }

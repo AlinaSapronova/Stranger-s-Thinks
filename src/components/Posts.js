@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getPost } from "../api";
 
-const AllPosts = () => {
-  const [posts, setPosts] = useState([]);
+const AllPosts = ({posts, setPosts}) => {
+  
   useEffect(() => {
     getPost().then((result) => {
       setPosts(result.data.posts);

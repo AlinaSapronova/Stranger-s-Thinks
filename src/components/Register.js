@@ -1,22 +1,23 @@
 import React from "react"
 import { registerUser } from "../api";
 
-function Register ({username,password,setUsername,setPassword,setIsLoggedIn}) {
+function Register ({username, setUsername, password, setPassword}) {
 
 async function handleSubmit(event) {
     event.preventDefault();
-    const token = await registerUser(username,password) 
-    if(token) {
+    const result = await registerUser(username,password) 
+    if(result) {
         setIsLoggedIn(true)
-        localStorage.setItem("token",token)
+        localStorage.setItem("token", result)
     }
+    
 }
 return (<div className="input">
     <form onSubmit={handleSubmit}>
         <h1>Sign up here</h1>
-        <lable>
+        <label>
             Create username:
-        </lable>
+        </label>
         <input id="username" 
         placeholder="Create username"
         value={username}
@@ -24,16 +25,16 @@ return (<div className="input">
             setUsername(event.target.value)
         }}></input>
 
-        <lable>
+        <label>
             Create password:
-        </lable>
+        </label>
         <input id="password" 
         placeholder="Create password"
         value={password}
         onChange={(event) => {
             setPassword(event.target.value)
         }}></input>
-        <button type="submit">Create your account!</button>
+        <button type="submit" >Create your account!</button>
     </form>
 </div>)
 }

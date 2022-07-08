@@ -3,9 +3,8 @@ import { loginUser } from "../api";
 
 
 
-const Login = (props) => {
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
+const Login = ({username, setUsername, password, setPassword}) => {
+
 
 const handleOnChange = (event) => {
     const changed = event.target.id;
@@ -17,8 +16,9 @@ const handleOnChange = (event) => {
     }
 }
 const handleSubmit = async () => {
-    const token = loginUser(username,password)
-    localStorage.setItem("token", token);
+    const result = await loginUser(username,password)
+    localStorage.setItem("token",result.data.token);
+console.log(result.data.token, "result from login handle")
 }
 return (<div className = "input">
     <form>

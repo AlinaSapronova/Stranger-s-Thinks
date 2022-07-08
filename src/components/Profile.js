@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from "react";
  import {getProfile} from "../api"
 
-const Profile = (props) => {
+const Profile = ({myInfo, setMyInfo}) => {
     let token = ""
-    const [myInfo, setMyInfo] = useState({})
+    
     useEffect(()=>{
         token=localStorage.getItem("token")
         async function getMyInfo(){
