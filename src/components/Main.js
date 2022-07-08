@@ -1,13 +1,15 @@
 import React, {useState} from "react";
 import { AllPosts } from "./";
+import {NavBar} from "./"
 
 
 const Main = () => {
   const [posts, setPosts] = useState({});
   return (
     <div>
-      <h1>main</h1>
+      <NavBar />
       <AllPosts posts={posts} setPosts={setPosts}/>
+      
     </div>
   );
 };

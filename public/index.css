@@ -1,1 +1,18 @@
 /* define style for <p> tags */
+
+
+.box{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    
+}
+
+
+.link{
+    text-decoration: none;
+    color: white
+
+    
+}

@@ -17,5 +17,15 @@ export const apiURL = `https://strangers-things.herokuapp.com/api/${cohortName}`
   }
   
   }
- 
+
+  export const getProfile= async(token) => {
+    const response = await fetch(`${apiURL}/users/me`,{
+      headers: {"Content-Type": "application/json",
+    "Authorization": `Bearer ${token}`
+      }
+    })
+    const result = await response.json()
+    const data= result.data
+    return data
+  }
  
