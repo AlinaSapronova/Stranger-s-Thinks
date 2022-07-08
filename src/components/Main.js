@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Posts,Profile,NavBar,Login } from "./";
+import { Posts,Profile,NavBar,Login,Register } from "./";
 
 
 const Main = () => {
@@ -12,6 +12,7 @@ const Main = () => {
         <Route path = "/Profile" element = {<Profile/>}></Route>
         <Route path = "/Posts"  element = {<Posts/>}></Route>
         <Route path = "/Login" element = {<Login />}></Route>
+        <Route path = "/Register" element = {<Register />}></Route>
       </Routes>
       </>
    
