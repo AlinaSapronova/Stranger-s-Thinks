@@ -17,7 +17,7 @@ const handleOnChange = (event) => {
         setPassword(event.target.value)
     }
 }
-async function handleSubmit() {
+async function handleSubmit(event) {
     event.preventDefault()
     const result = await loginUser(username,password)
     localStorage.setItem("token",result.data.token);
