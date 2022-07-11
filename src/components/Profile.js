@@ -26,9 +26,9 @@ const Profile = ({user}) => {
        <>
             {myPosts.map((info) => (
         <div className="info" key={info._id}>Your Profile
-          <h2>{info.content}</h2>
-          <h3>{info.author.username}</h3>
-        </div>
+        <h2>{info.content}</h2>
+        <h3>{info.author.username}</h3>
+      </div>
        
     ))} 
     </>
