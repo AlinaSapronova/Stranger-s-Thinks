@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: black;
+    padding: 10px;
     
 }
 
@@ -26,7 +27,7 @@ input{
     border-radius: 10px;
     font-size: 20px;
     margin: 5px;
-    background-color: rgb(0, 0, 0);
+    background-color: wheat;
     font-style: italic;
    
 }
@@ -35,8 +36,26 @@ input{
     border-radius: 10px;
     font-size: 20px;
     margin: 5px;
+    background-color: chocolate;
 }
 
 label{
     font-size: 25px;
+}
+
+.posts{
+    border: 2px solid black;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: bisque;
+}
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: 25px;
+    text-align: center;
 }

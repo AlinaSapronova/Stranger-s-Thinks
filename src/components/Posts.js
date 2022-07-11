@@ -13,7 +13,7 @@ const AllPosts = ({posts, setPosts}) => {
     <>
       <h1>Posts</h1>
       {posts.map((post) => (
-        <div key={post._id}>
+        <div key={post._id} className="posts">
           <h2>{post.title}</h2>
           <h3>{post.author.username}</h3>
           <p>{post.description}</p>

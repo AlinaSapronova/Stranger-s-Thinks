@@ -1,13 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { getPost } from "../api";
 
 const MyPosts = ({ myPosts }) => {
   const [showInactive, setShowInactive] = useState(false);
   const showInactiveCheck = useRef();
 
+  useEffect(() => {
+    getPost().then((result) => {
+      setShowInactive(result.data.posts);
+    });
+  }, []);
+
   function handleShowInactive(event) {
     setShowInactive(showInactive ? false : true);
     event.target.checked = !showInactive;
   }
+
   return (
     <div>
       <h2>My posts</h2>

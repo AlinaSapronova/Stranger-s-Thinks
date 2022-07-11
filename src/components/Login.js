@@ -1,9 +1,7 @@
 import React from "react";
 import { loginUser } from "../api";
-
-
-
-
+import { useNavigate,Link } from "react-router-dom";
+import {Profile} from "./";
 
 const Login = ({username, setUsername, password, setPassword}) => {
 
@@ -22,7 +20,10 @@ async function handleSubmit(event) {
     const result = await loginUser(username,password)
     localStorage.setItem("token",result.data.token);
 console.log(result.data.token, "result from login handle")
+
 }
+
+
 
 return (<div className = "input">
     <form>
@@ -41,15 +42,12 @@ return (<div className = "input">
         onChange = {handleOnChange}
         placeholder = "password"
         value = {password}/>
-        <button type= "submit"  className = "btn" onClick={handleSubmit}>Log in</button>
+        <button type= "submit"  className = "btn" onClick = {handleSubmit}>Log in</button>
     </form>
-    
-   
-    
 
 </div>)
 }
 
 
 
-export default Login;
+export default Login

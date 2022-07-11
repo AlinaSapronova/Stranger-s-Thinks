@@ -1,38 +1,34 @@
-import React,{useState, useEffect} from "react";
- import {getProfile} from "../api";
- import {MyPosts, Messages} from "./";
+import React, { useState, useEffect } from "react";
+import { getProfile } from "../api";
 
-const Profile = ({user}) => {
-    const [myInfo, setMyInfo] = useState({});
-    const [myPosts,setMyPosts] = useState([]);
-    const [myMessages, setMyMessages] = useState([]);
-    let token = "";
-    
+const Profile = ({ user }) => {
+  const [myInfo, setMyInfo] = useState({});
 
-    useEffect(()=>{
-        token = localStorage.getItem("token")
-        async function getMyInfo(){
-            const myReturnedInfo = await getProfile(token)
-            //console.log(myReturnedInfo, "this is returned info")
+  let token = "";
 
-            setMyInfo(myReturnedInfo)
-            setMyMessages(myReturnedInfo.messages)
-            setMyPosts(myReturnedInfo.post)
-        }
-        getMyInfo()
-    },[])
-
-    return (
-       <>
-            {myPosts.map((info) => (
-        <div className="info" key={info._id}>Your Profile
-        <h2>{info.content}</h2>
-        <h3>{info.author.username}</h3>
-      </div>
-       
-    ))} 
+  useEffect(() => {
+    token = localStorage.getItem("token");
+    async function getMyInfo() {
+      const myReturnedInfo = await getProfile(token);
+      //console.log(myReturnedInfo, "this is returned info")
+      setMyInfo(myReturnedInfo);
+    }
+    getMyInfo();
+  }, []);
+  //console.log(myInfo);
+  return (
+     myInfo ? 
+    <>
+      {myInfo.data.map((message) => (
+        <div className="info" key={message._id}>
+          Your Profile
+          <h2>{message.content}</h2>
+          <h3>{message.author.username}</h3>
+        </div>
+      ))}
     </>
-    )
- }
+   : null
+   )
+};
 
 export default Profile;
