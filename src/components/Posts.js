@@ -19,8 +19,6 @@ const AllPosts = ({posts, setPosts}) => {
           <p>{post.description}</p>
           <h3>{post.price}</h3>
           <h3>{post.location}</h3>
-          
-
         </div>
       ))}
     </>

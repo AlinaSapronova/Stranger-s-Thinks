@@ -1,5 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
 import { loginUser } from "../api";
+
+
 
 
 
@@ -15,11 +17,13 @@ const handleOnChange = (event) => {
         setPassword(event.target.value)
     }
 }
-const handleSubmit = async () => {
+async function handleSubmit() {
+    event.preventDefault()
     const result = await loginUser(username,password)
     localStorage.setItem("token",result.data.token);
 console.log(result.data.token, "result from login handle")
 }
+
 return (<div className = "input">
     <form>
         <label>
@@ -37,8 +41,11 @@ return (<div className = "input">
         onChange = {handleOnChange}
         placeholder = "password"
         value = {password}/>
+        <button type= "submit"  className = "btn" onClick={handleSubmit}>Log in</button>
     </form>
-    <button type= "submit" onClick={handleSubmit} className = "btn">Log in</button>
+    
+   
+    
 
 </div>)
 }

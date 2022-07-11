@@ -14,18 +14,6 @@ export async function getPost() {
   }
 }
 
-export const getProfile = async (token) => {
-  const response = await fetch(`${apiURL}/users/me`, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const result = await response.json();
-  const data = result.data;
-  return data;
-};
-
 export const loginUser = async (username, password) => {
   try {
     const response = await fetch(`${apiURL}/users/login`, {
@@ -49,6 +37,7 @@ export const loginUser = async (username, password) => {
 };
 
 
+
 export const registerUser = async (username,password,setToken) => {
   const response = await fetch(`${apiURL}/users/register`, {
     method:"POST",
@@ -69,3 +58,22 @@ export const registerUser = async (username,password,setToken) => {
   return result
   
 }
+
+
+
+export const getProfile = async (token) => {
+  const response = await fetch(`${apiURL}/users/me`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+    },
+  });
+  const result = await response.json();
+  const data = result.data;
+  return data;
+};
+
+
+
+
+

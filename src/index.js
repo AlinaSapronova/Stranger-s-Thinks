@@ -11,6 +11,6 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <BrowserRouter>
-  <Main/>
+  <Main />
   </BrowserRouter>
 );

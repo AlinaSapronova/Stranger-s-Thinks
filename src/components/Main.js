@@ -20,7 +20,8 @@ const Main = () => {
           path="/Posts"
           element={<Posts posts={posts} setPosts={setPosts} />}
         ></Route>
-        <Route
+
+        <Route exact
           path="/Login"
           element={
             <Login
@@ -31,6 +32,7 @@ const Main = () => {
             />
           }
         ></Route>
+
         <Route
           path="/Register"
           element={
@@ -42,6 +44,7 @@ const Main = () => {
             />
           }
         ></Route>
+
       </Routes>
     </>
   );

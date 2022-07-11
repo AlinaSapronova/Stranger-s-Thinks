@@ -7,7 +7,7 @@ async function handleSubmit(event) {
     event.preventDefault();
     const result = await registerUser(username,password) 
     if(result) {
-        setIsLoggedIn(true)
+       
         localStorage.setItem("token", result)
     }
     
@@ -34,7 +34,7 @@ return (<div className="input">
         onChange={(event) => {
             setPassword(event.target.value)
         }}></input>
-        <button type="submit" >Create your account!</button>
+        <button type="submit" className="btn">Create your account!</button>
     </form>
 </div>)
 }
