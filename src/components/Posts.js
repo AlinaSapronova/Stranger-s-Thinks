@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { getPost } from "../api";
 import Messages from "./Messages";
+import Search from "./Search";
 
 const AllPosts = ({posts, setPosts}) => {
   const token = localStorage.getItem("token")
@@ -16,6 +17,7 @@ const AllPosts = ({posts, setPosts}) => {
   return (
     <>
       <h1>Posts</h1>
+      <Search/>
       {posts.map((post) => {
         let postId = post._id;
         return(

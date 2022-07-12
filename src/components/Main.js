@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Posts, Profile, NavBar, Login, Register,Messages,AddNewPost } from "./";
+import { Posts, Profile, NavBar, Login, Register,Messages,AddNewPost, Search } from "./";
 
 
 const Main = () => {
