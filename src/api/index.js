@@ -1,4 +1,3 @@
-import axios from "axios";
 
 export const cohortName = "2206-FTB-ET-WEB-FT";
 export const apiURL = `https://strangers-things.herokuapp.com/api/${cohortName}`;
@@ -43,25 +42,23 @@ export const registerUser = async (username,password) => {
     method:"POST",
     headers: {
       "Content-Type" : "application/json"
-      
     },
     body: JSON.stringify({
       user: {
         username: username,
-        password: password,
+        password: password
       }
-      
     })
   })
   const result = await response.json()
-  console.log(result,"im from api index!!!")
+  console.log(result,"i'm from api index!!!")
   return result
   
 }
 
 
-
 export const getMessages = async (token) => {
+  // console.log(token, "api token")
   const response = await fetch(`${apiURL}/users/me`, {
     headers: {
       "Content-Type": "application/json",
@@ -75,6 +72,7 @@ export const getMessages = async (token) => {
 
 
 export async function sendMessage(token, postId, content) {
+  console.log(postId)
   fetch(`${apiURL}/posts/${postId}/messages`, {
   method: "POST",
   headers: {
@@ -94,3 +92,28 @@ export async function sendMessage(token, postId, content) {
 }
 
 
+export async function createNewPost(postObj, token) {
+  console.log(postObj, "I'm a postObj")
+  try {
+  const response = await fetch(`${apiURL}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      post: {
+        title: postObj.title,
+        description: postObj.description,
+        price: postObj.price,
+        location: postObj.location,
+        willDeliver: postObj.willDeliver,
+      },
+    }),
+  }); 
+  const result = await response.json();
+  console.log(result);
+  return result;
+
+}catch(error){console.error(error)}
+}

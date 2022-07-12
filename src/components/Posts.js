@@ -5,19 +5,17 @@ import Messages from "./Messages";
 const AllPosts = ({posts, setPosts}) => {
   const token = localStorage.getItem("token")
   useEffect(() => {
-    
     getPost().then((result) => {
       setPosts(result.data.posts);
     });
   }, []);
   
-  console.log(token);
+  // console.log(token);
 
 
   return (
     <>
       <h1>Posts</h1>
-
       {posts.map((post) => {
         let postId = post._id;
         return(

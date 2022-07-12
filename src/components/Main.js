@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Posts, Profile, NavBar, Login, Register,Messages } from "./";
+import { Posts, Profile, NavBar, Login, Register,Messages,AddNewPost } from "./";
 
 
 const Main = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [myInfo, setMyInfo] = useState([]);
+  const [getMyMessage, setGetMyMessasge] = useState([]);
   const [posts, setPosts] = useState([]);
   const [token,setToken] = useState("");
+  const [title,description,price,location] = useState("");
   return (
     <>
       <NavBar />
@@ -16,7 +17,7 @@ const Main = () => {
         <Route path="/" element={<div>Landing page</div>}></Route>
         <Route
           path="/Profile"
-          element={<Profile myInfo={myInfo} setMyInfo={setMyInfo}  posts={posts} setPosts={setPosts} />}
+          element={<Profile getMyMessage={getMyMessage} setGetMyMessasge={setGetMyMessasge}  posts={posts} setPosts={setPosts} />}
         ></Route>
         <Route
           path="/Posts"
@@ -47,6 +48,7 @@ const Main = () => {
             />
           }
         ></Route>
+        <Route path="/AddNewPost" element={<AddNewPost title={title} description={description} price={price} location={location}/>}></Route>
 
       </Routes>
     </>

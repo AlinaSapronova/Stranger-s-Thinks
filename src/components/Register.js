@@ -4,7 +4,7 @@ import { registerUser } from "../api";
 
 
 function Register ({username, setUsername, password, setPassword}) {
-
+    const navigate = useNavigate();
 
 async function handleSubmit(event) {
     event.preventDefault();
@@ -12,7 +12,7 @@ async function handleSubmit(event) {
     if(result) {
         localStorage.setItem("token", result)
     }
-    
+    navigate("/Login")
 }
 
 

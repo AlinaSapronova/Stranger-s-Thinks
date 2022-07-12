@@ -22,7 +22,7 @@ async function handleSubmit(event) {
     const result = await loginUser(username,password)
     localStorage.setItem("token",result.data.token);
     
-console.log(result.data.token, "result from login handle")
+// console.log(result.data.token, "result from login handle")
  navigate("/Profile")
 
 
