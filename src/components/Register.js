@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../api";
-import { Login } from "./";
+
 
 function Register ({username, setUsername, password, setPassword}) {
+
 
 async function handleSubmit(event) {
     event.preventDefault();
@@ -12,6 +14,8 @@ async function handleSubmit(event) {
     }
     
 }
+
+
 return (<div className="input">
     <form onSubmit={handleSubmit}>
         <h1>Sign up here!</h1>

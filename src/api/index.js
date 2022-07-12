@@ -38,7 +38,7 @@ export const loginUser = async (username, password) => {
 
 
 
-export const registerUser = async (username,password,setToken) => {
+export const registerUser = async (username,password) => {
   const response = await fetch(`${apiURL}/users/register`, {
     method:"POST",
     headers: {
@@ -61,7 +61,7 @@ export const registerUser = async (username,password,setToken) => {
 
 
 
-export const getProfile = async (token) => {
+export const getMessages = async (token) => {
   const response = await fetch(`${apiURL}/users/me`, {
     headers: {
       "Content-Type": "application/json",
@@ -74,6 +74,23 @@ export const getProfile = async (token) => {
 };
 
 
-
+export async function sendMessage(token, postId, content) {
+  fetch(`${apiURL}/posts/${postId}/messages`, {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    message: {
+      content: content
+    }
+  })
+}).then(response => response.json())
+  .then(result => {
+    console.log(result);
+  })
+  .catch(console.error);
+}
 
 

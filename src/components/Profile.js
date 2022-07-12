@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { getProfile } from "../api";
+import { getMessages } from "../api";
 
-const Profile = ({ user }) => {
-  const [myInfo, setMyInfo] = useState({});
-
-  let token = "";
+const Profile = ({posts, setPosts} ) => {
+const token = localStorage.getItem("token");
 
   useEffect(() => {
-    token = localStorage.getItem("token");
-    async function getMyInfo() {
-      const myReturnedInfo = await getProfile(token);
-      //console.log(myReturnedInfo, "this is returned info")
-      setMyInfo(myReturnedInfo);
+    async function getMessages(token) {
+      const showMessage = await getMessages(token);
+      getMessages(showMessage );
     }
-    getMyInfo();
+    getMessages();
   }, []);
-  //console.log(myInfo);
+ 
   return (
-     myInfo ? 
-    <>
-      {myInfo.data.map((message) => (
-        <div className="info" key={message._id}>
-          Your Profile
-          <h2>{message.content}</h2>
-          <h3>{message.author.username}</h3>
-        </div>
-      ))}
-    </>
-   : null
+    <div>
+      <h3>Hello</h3>
+    </div>
+
    )
+   
 };
 
 export default Profile;

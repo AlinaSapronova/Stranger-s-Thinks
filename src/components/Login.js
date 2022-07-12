@@ -3,10 +3,11 @@ import { loginUser } from "../api";
 import { useNavigate,Link } from "react-router-dom";
 import {Profile} from "./";
 
-const Login = ({username, setUsername, password, setPassword}) => {
-
+const Login = ({username, setUsername, password, setPassword, token, setToken}) => {
+const navigate = useNavigate();
 
 const handleOnChange = (event) => {
+   
     const changed = event.target.id;
     if(changed === "username") {
         setUsername(event.target.value)
@@ -16,17 +17,21 @@ const handleOnChange = (event) => {
     }
 }
 async function handleSubmit(event) {
+  
     event.preventDefault()
     const result = await loginUser(username,password)
     localStorage.setItem("token",result.data.token);
+    
 console.log(result.data.token, "result from login handle")
+ navigate("/Profile")
+
 
 }
 
 
 
 return (<div className = "input">
-    <form>
+    <form onSubmit = {handleSubmit}>
         <label>
             Username
         </label>
@@ -42,7 +47,7 @@ return (<div className = "input">
         onChange = {handleOnChange}
         placeholder = "password"
         value = {password}/>
-        <button type= "submit"  className = "btn" onClick = {handleSubmit}>Log in</button>
+        <button type= "submit"  className = "btn" >Log in</button>
     </form>
 
 </div>)
