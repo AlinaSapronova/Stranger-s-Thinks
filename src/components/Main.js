@@ -14,7 +14,7 @@ const Main = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<div>Landing page</div>}></Route>
+        <Route path="/" element={<div className="welcome">Welcome to Stranger's Things!</div>}></Route>
         <Route
           path="/Profile"
           element={<Profile getMyMessage={getMyMessage} setGetMyMessasge={setGetMyMessasge}  posts={posts} setPosts={setPosts} />}

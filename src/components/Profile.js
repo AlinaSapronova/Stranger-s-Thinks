@@ -22,8 +22,8 @@ const Profile = () => {
 
   return (
     <>
-      <h3>Welcome {getMyMessage.username}</h3>
-      <button className="btn" type="submit" onClick={handleSubmit}>
+      <h3 className="welcome">Welcome {getMyMessage.username}</h3>
+      <button className="postbtn" type="submit" onClick={handleSubmit}>
         Add New Post
       </button>
 

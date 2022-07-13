@@ -60,3 +60,18 @@ p{
     font-size: 20px;
     text-align: center;
 }
+
+.welcome{
+text-align: center;
+font-size: 40px;
+}
+
+.postbtn{
+
+    padding: 9px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 5px;
+    background-color: chocolate;    
+
+}
