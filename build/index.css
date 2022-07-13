@@ -1,0 +1,62 @@
+/* define style for <p> tags */
+
+
+.box{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 10px;
+    
+}
+
+
+.link{
+    text-decoration: none;
+    color: white
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+}
+input{
+    padding: 9px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 5px;
+    background-color: wheat;
+    font-style: italic;
+   
+}
+.btn{
+    padding: 9px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 5px;
+    background-color: chocolate;
+}
+
+label{
+    font-size: 25px;
+}
+
+.posts{
+    border: 2px solid black;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    background-color: bisque;
+}
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+    text-align: center;
+}
